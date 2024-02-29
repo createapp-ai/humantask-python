@@ -14,9 +14,9 @@ class HumanTaskError(Exception):
 
 
 class HumanTask:
-    def __init__(
-        self, api_key: Union[str, None] = os.environ.get("HUMANTASK_API_KEY", None)
-    ):
+    def __init__(self, api_key: Union[str, None] = None):
+        if not api_key:
+            api_key = os.environ.get("HUMANTASK_API_KEY", None)
         if not api_key:
             raise ValueError("api_key must be provided")
         self.api_key = api_key
