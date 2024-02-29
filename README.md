@@ -6,7 +6,7 @@
 ## Installation
 
 ```bash
-pip install openai
+pip install humantask
 ```
 
 
